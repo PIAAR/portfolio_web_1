@@ -1,11 +1,10 @@
-import CategoryItem from './components/category-item/category-item.component';
-import './styles/categories.styles.scss'
-
+import ListCategories from './components/category-list/category-list.component';
+import './styles/categories/categories.styles.scss';
 
 const App = () => {
     const categories = [
         {
-          "id": 1,
+          "id": 1,    
           "title": "Hats",
           "imageUrl": "https://i.ibb.co/cvpntL1/hats.png"
         },
@@ -28,15 +27,11 @@ const App = () => {
           "id": 5,
           "title": "Mens",
           "imageUrl": "https://i.ibb.co/R70vBrQ/men.png"
-        }
-      ] 
+        },
+    ]
       
     return (
-        <div className='categories-container'>
-            {categories.map(({ category }) => (
-                <CategoryItem key={category.id} category={category} />
-            ))}
-        </div>
+      <ListCategories category ={categories} />
     );   
 }
 
