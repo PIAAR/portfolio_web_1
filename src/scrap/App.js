@@ -1,4 +1,4 @@
-import ListCategories from './components/category-list/category-list.component';
+import ListCategories from '../js/components/products/category-list/category-list.component';
 import './styles/categories/categories.styles.scss';
 
 const App = () => {
