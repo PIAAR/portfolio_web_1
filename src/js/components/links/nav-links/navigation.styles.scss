@@ -1,0 +1,187 @@
+.navigation-container {
+    .navigation-links {
+        display: inline-flex;
+    }
+}
+// Basic LESS vars for Color and Font
+@font1: "Times New Roman", monospace;
+@font2: "Times New Roman", cursive;
+@lcd1: #78ad72;
+@lcd2: #6f9a6a;
+@lcd3: #5d7d59;
+@lcd4: #3a4a38;
+@lcd5: #1c211b;
+
+// Mini Reset
+body,
+html,
+div,
+span,
+li,
+button {
+  box-sizing: border-box;
+}
+#react-mount {
+  width: 100%;
+  height: 100%;
+}
+
+@gd1: repeating-linear-gradient(
+  45deg,
+  @lcd1,
+  @lcd1 10px,
+  @lcd2 10px,
+  @lcd2 20px
+);
+
+@gd2: repeating-linear-gradient(
+  45deg,
+  @lcd2,
+  @lcd2 10px,
+  @lcd3 10px,
+  @lcd3 20px
+);
+// Style
+body {
+  background: #000;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 100%;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.row,
+.column {
+  box-sizing: border-box;
+  display: flex;
+  transition: all 400ms ease-in-out;
+}
+
+.row {
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1;
+  height: 50%;
+
+  &.onHover {
+    height: 70%;
+    & > .column.onHover > div {
+      padding: 14px 24px 24px 24px;
+      font-size: 24px;
+    }
+  }
+  &.offHover {
+    height: 30%;
+  }
+  &.active {
+    height: 100%;
+    & > .column.show > .ct {
+      font-size: 38px;
+      bottom: 0px;
+      min-height: 20%;
+      max-height: 20%;
+      & > .close {
+        display: inline-block;
+      }
+    }
+  }
+  &.off {
+    height: 0%;
+  }
+}
+
+.close {
+  display: none;
+  margin-top: -2px;
+}
+
+.column {
+  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+
+  &.onHover {
+    flex-basis: 60%;
+  }
+  &.offHover {
+    flex-basis: 40%;
+  }
+  &.show {
+    flex-basis: 100%;
+  }
+  &.hide {
+    flex-basis: 0%;
+  }
+  &.bg1 {
+    background: @lcd2;
+    // background-attachment: fixed;
+    // background-position: center center;
+    // background-size: cover;
+  }
+  &.bg2 {
+    background: @gd1;
+  }
+  &.bg3 {
+    background: @gd1;
+  }
+  &.bg4 {
+    background: @lcd2;
+  }
+}
+
+.ct {
+  transition: all 200ms ease-out;
+  padding: 24px;
+  cursor: pointer;
+  min-height: 50px;
+  max-height: 50px;
+  width: 100%;
+  font-size: 12px;
+}
+
+.common {
+  white-space: nowrap;
+  position: absolute;
+  background: @lcd4;
+  color: @lcd1;
+}
+
+.colA {
+  .common();
+  background: @lcd5;
+  left: 0;
+  top: 0;
+}
+
+.colB {
+  .common();
+  right: 0;
+  top: 0;
+  text-align: right;
+}
+
+.colC {
+  .common();
+  left: 0;
+  bottom: 0;
+}
+
+.colD {
+  .common();
+  background: @lcd5;
+  right: 0;
+  bottom: 0;
+  text-align: right;
+}

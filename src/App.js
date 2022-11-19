@@ -1,4 +1,4 @@
-import CategoryItem from './js/components/products/category-item/category-item.component'
+import CategoryItem from './js/components/products/category-item/category-item.component';
 
 const App = () => {
   const categories = [
@@ -27,15 +27,15 @@ const App = () => {
       "title": "Mens",
       "imageUrl": "https://i.ibb.co/R70vBrQ/men.png"
     },
-  ]
+  ];
 
-    return(
-      <div className='categories-container'>
-        {categories.map((category) => (
-          <CategoryItem key={category.id} category={category} />
-        ))}
-      </div>
-    );
+  return (
+    <div className='categories-container'>
+      {categories.map((category) => (
+        <CategoryItem key={category.id} category={category} />
+      ))}
+    </div>
+  );
 };
 
 export default App;
