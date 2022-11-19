@@ -1,23 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import '../src/css/index.css';
-import App from './app/App_old';
+
+import App from './App'
+
 import reportWebVitals from './reportWebVitals';
 
-// //  Import needed libraries
-// var React = require('react');
-// var ReactDOM = require('react-dom');
-
-// // Reference the home page
-var Home = require('../src/js/components/home/HomePage.jsx');
-
-// //  Render the app by id
-// ReactDOM.render(<Home />, document.getElementById('app'));
-
-const root = ReactDOM.createRoot(document.getElementById('app'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Home />
+      <App />
   </React.StrictMode>
 );
 
