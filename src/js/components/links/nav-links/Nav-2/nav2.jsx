@@ -1,4 +1,6 @@
 import React from "react";
+import './nav2.scss';
+
 /**
  * Full Screen Navigation
  * Simple Demo using React make a 

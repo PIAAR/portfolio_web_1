@@ -1,16 +1,11 @@
-.navigation-container {
-    .navigation-links {
-        display: inline-flex;
-    }
-}
 // Basic LESS vars for Color and Font
-@font1: "Times New Roman", monospace;
-@font2: "Times New Roman", cursive;
-@lcd1: #78ad72;
-@lcd2: #6f9a6a;
-@lcd3: #5d7d59;
-@lcd4: #3a4a38;
-@lcd5: #1c211b;
+$font1: 'Times New Roman', 'monospace';
+$font2: 'Times New Roman', 'cursive';
+$lcd1: #78ad72;
+$lcd2: #6f9a6a;
+$lcd3: #5d7d59;
+$lcd4: #3a4a38;
+$lcd5: #a0a29f;
 
 // Mini Reset
 body,
@@ -26,20 +21,20 @@ button {
   height: 100%;
 }
 
-@gd1: repeating-linear-gradient(
+$gd1: repeating-linear-gradient(
   45deg,
-  @lcd1,
-  @lcd1 10px,
-  @lcd2 10px,
-  @lcd2 20px
+  $lcd1,
+  $lcd1 10px,
+  $lcd2 10px,
+  $lcd2 20px
 );
 
-@gd2: repeating-linear-gradient(
+$gd2: repeating-linear-gradient(
   45deg,
-  @lcd2,
-  @lcd2 10px,
-  @lcd3 10px,
-  @lcd3 20px
+  $lcd2,
+  $lcd2 10px,
+  $lcd3 10px,
+  $lcd3 20px
 );
 // Style
 body {
@@ -125,19 +120,19 @@ body {
     flex-basis: 0%;
   }
   &.bg1 {
-    background: @lcd2;
+    background: $lcd2;
     // background-attachment: fixed;
     // background-position: center center;
     // background-size: cover;
   }
   &.bg2 {
-    background: @gd1;
+    background: $gd1;
   }
   &.bg3 {
-    background: @gd1;
+    background: $gd1;
   }
   &.bg4 {
-    background: @lcd2;
+    background: $lcd2;
   }
 }
 
@@ -151,36 +146,36 @@ body {
   font-size: 12px;
 }
 
-.common {
+@mixin common {
   white-space: nowrap;
   position: absolute;
-  background: @lcd4;
-  color: @lcd1;
+  background: $lcd4;
+  color: $lcd1;
 }
 
 .colA {
-  .common();
-  background: @lcd5;
+  @include common;
+  background: $lcd5;
   left: 0;
   top: 0;
 }
 
 .colB {
-  .common();
+  @include common;
   right: 0;
   top: 0;
   text-align: right;
 }
 
 .colC {
-  .common();
+  @include common;
   left: 0;
   bottom: 0;
 }
 
 .colD {
-  .common();
-  background: @lcd5;
+  @include common;
+  background: $lcd5;
   right: 0;
   bottom: 0;
   text-align: right;
